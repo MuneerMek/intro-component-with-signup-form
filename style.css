@@ -21,6 +21,7 @@
 */
 body {
   min-height: 100vh;
+  font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -92,4 +93,62 @@ h6 {
 }
 .fw-700 {
   font-weight: 700;
+}
+
+/* Page Styles */
+body {
+  padding: 6rem 1rem 4rem;
+  font-family: "Poppins";
+  color: #fffdff;
+  display: grid;
+  gap: 4rem;
+  grid-template-rows: 12rem 1fr;
+  background-color: hsl(var(--red));
+  background-image: url("images/bg-intro-mobile.png");
+  background-size: cover;
+  text-align: center;
+}
+
+.description {
+  display: grid;
+  gap: 1rem;
+}
+
+h1 {
+  padding: 0 3rem;
+}
+.description > p {
+  padding: 0 0.5rem;
+}
+
+/* Form */
+
+main {
+  display: grid;
+  grid-template-rows: 5.5rem 1fr;
+  gap: 1.5rem;
+}
+
+.cta {
+  align-self: center;
+}
+
+.cta > p {
+  padding: 1rem 4rem;
+  background-color: #5c54a3;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 0 hsl(var(--dark-blue), 0.2);
+}
+
+.signup {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+/* Media Queries */
+@media (min-width: 40rem) {
+  body {
+    background-image: url("images/bg-intro-desktop.png");
+  }
 }
