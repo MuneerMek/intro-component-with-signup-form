@@ -97,10 +97,11 @@ h6 {
 
 /* Page Styles */
 body {
-  padding: 6rem 1rem 4rem;
+  padding: 6rem 1.5rem 4rem;
   font-family: "Poppins";
-  color: #fffdff;
+  color: white;
   display: grid;
+  place-content: center;
   gap: 4rem;
   grid-template-rows: 12rem 1fr;
   background-color: hsl(var(--red));
@@ -117,38 +118,75 @@ body {
 h1 {
   padding: 0 3rem;
 }
-.description > p {
-  padding: 0 0.5rem;
-}
 
 /* Form */
 
 main {
   display: grid;
   grid-template-rows: 5.5rem 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .cta {
   align-self: center;
 }
-
 .cta > p {
   padding: 1rem 4rem;
   background-color: #5c54a3;
   border-radius: 0.5rem;
-  box-shadow: 0 8px 0 hsl(var(--dark-blue), 0.2);
+  box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
+}
+.cta span{
+  font-weight: 600;
 }
 
 .signup {
   padding: 1.5rem;
   background-color: white;
+  display: grid;
+  gap: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
+}
+.signup > input{
+  padding: 1rem;
+  width: 100%;
+  font-weight: 700;
+  border: 1px solid hsl(var(--grayish-blue));
+  border-radius: 0.5rem;
+}
+.signup > input[name="submit"]{
+  background-color: hsl(var(--green));
+  color: hsl(var(--white));
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tos{
+  padding-inline: 1rem;
+  color: hsl(var(--grayish-blue));
+  font-size: 0.75rem;
+}
+.tos > a{
+  text-decoration: none;
+  color: hsl(var(--red));
+  font-weight: 700;
 }
 
 /* Media Queries */
-@media (min-width: 40rem) {
+@media (min-width: 31.25rem) {
   body {
     background-image: url("images/bg-intro-desktop.png");
+  }
+}
+
+@media (max-width: 23rem) {
+/* Fix element sizing on small screens */
+  body{
+    gap: 6rem;
+  }
+  .cta > p{
+    padding: 1rem 2rem;
   }
 }
