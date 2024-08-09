@@ -166,7 +166,7 @@ main {
 .tos{
   padding-inline: 1rem;
   color: hsl(var(--grayish-blue));
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 .tos > a{
   text-decoration: none;
@@ -175,16 +175,49 @@ main {
 }
 
 /* Media Queries */
-@media (min-width: 31.25rem) {
+@media (min-width: 48rem) {
   body {
+    /* padding: 6rem 10rem; */
+    padding: 6rem clamp(5rem, 10vw, 10rem);
     background-image: url("images/bg-intro-desktop.png");
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  main {
+    gap: 0;
+    justify-content: space-around;
+  }
+  .description{
+    align-self: center;
+    text-align: left;
+    gap: 2rem;
+  }
+  h1{
+    padding: 0;
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+  .cta {
+  /* align-self: flex-start; */
+  width: clamp(20rem, 50vw, 34rem);
+  }
+  .cta > p{
+    padding: 1rem;
+  }
+  .signup {
+    padding: 2rem 2rem 2.5rem;
+    gap: 1rem;
+  }
+  .signup > input{
+    padding: 1rem 2rem;
   }
 }
 
-@media (max-width: 23rem) {
-/* Fix element sizing on small screens */
+@media (max-width: 21.75rem) {
+/* Fix element sizing on tiny screens */
   body{
-    gap: 6rem;
+    gap: 7rem;
   }
   .cta > p{
     padding: 1rem 2rem;
