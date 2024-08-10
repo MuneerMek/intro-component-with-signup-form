@@ -182,7 +182,6 @@ main {
 .inner-element {
   display: none;
   background: hsl(var(--red));
-  aspect-ratio: 1;
   width: 1.5rem;
   border-radius: 50%;
 
