@@ -136,7 +136,7 @@ main {
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
 }
-.cta span{
+.cta span {
   font-weight: 600;
 }
 
@@ -144,31 +144,44 @@ main {
   padding: 1.5rem;
   background-color: white;
   display: grid;
-  gap: 1rem;
+  /* gap: 1rem; */
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
 }
-.signup > input{
+.signup > input {
   padding: 1rem;
+  margin: 0.75rem 0 0.25rem;
   width: 100%;
   font-weight: 700;
   border: 1px solid hsl(var(--grayish-blue));
   border-radius: 0.5rem;
 }
-.signup > input[name="submit"]{
+.signup > input[name="submit"] {
   background-color: hsl(var(--green));
   color: hsl(var(--white));
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
 }
+.form-alert {
+  display: none;
+  color: hsl(var(--red));
+  font-size: 0.65rem;
+  font-weight: 500;
+  font-style: italic;
+  justify-self: end;
+}
+.placeholder-red::placeholder {
+  color: hsl(var(--red));
+}
 
-.tos{
+.tos {
   padding-inline: 1rem;
+  margin-top: 0.75rem;
   color: hsl(var(--grayish-blue));
   font-size: 0.65rem;
 }
-.tos > a{
+.tos > a {
   text-decoration: none;
   color: hsl(var(--red));
   font-weight: 700;
@@ -188,38 +201,41 @@ main {
     gap: 0;
     justify-content: space-around;
   }
-  .description{
+  .description {
     align-self: center;
     text-align: left;
     gap: 2rem;
   }
-  h1{
+  h1 {
     padding: 0;
     font-size: 2.25rem;
     line-height: 1.1;
   }
   .cta {
-  /* align-self: flex-start; */
-  width: clamp(20rem, 50vw, 34rem);
+    /* align-self: flex-start; */
+    width: clamp(20rem, 50vw, 34rem);
   }
-  .cta > p{
+  .cta > p {
     padding: 1rem;
   }
   .signup {
     padding: 2rem 2rem 2.5rem;
-    gap: 1rem;
   }
-  .signup > input{
+  .signup > input {
     padding: 1rem 2rem;
+  }
+  .signup > input[name="submit"]:hover,
+  .signup > input[name="submit"]:focus {
+    background-color: hsl(var(--green), 0.6);
   }
 }
 
 @media (max-width: 21.75rem) {
-/* Fix element sizing on tiny screens */
-  body{
+  /* Fix element sizing on tiny screens */
+  body {
     gap: 7rem;
   }
-  .cta > p{
+  .cta > p {
     padding: 1rem 2rem;
   }
 }
