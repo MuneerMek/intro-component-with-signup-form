@@ -149,7 +149,7 @@ main {
   box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
 }
 .signup input {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   margin: 0.75rem 0 0.25rem;
   width: 100%;
   font-weight: 700;
@@ -187,7 +187,7 @@ main {
   border-radius: 50%;
 
   position: absolute;
-  right: 1.5rem;
+  right: 0.75rem;
   transform: translateY(-50%);
 }
 
@@ -235,12 +235,15 @@ main {
   .signup {
     padding: 2rem 2rem 2.5rem;
   }
-  .signup > input {
+  .signup input {
     padding: 1rem 2rem;
   }
   .signup input[name="submit"]:hover,
   .signup input[name="submit"]:focus {
     background-color: hsl(var(--green), 0.6);
+  }
+  .inner-element {
+    right: 2rem;
   }
 }
 
