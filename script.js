@@ -31,15 +31,19 @@ form.addEventListener("submit", (e) => {
   // Validate First Name
   if (firstname === "") {
     isValid = false;
-    document.querySelector(`input[name="fname"] + .form-alert`).style.display =
-      "block";
+    document.querySelector(`#fname + .form-alert`).style.display = "block";
+    document.querySelector(
+      `input[name="fname"] + .inner-element`
+    ).style.display = "block";
     document.querySelector(`input[name="fname"]`).placeholder = "";
     document.querySelector(`input[name="fname"]`).style.border =
       "2px solid hsl(var(--red))";
     console.log("First name error");
   } else {
-    document.querySelector(`input[name="fname"] + .form-alert`).style.display =
-      "none";
+    document.querySelector(`#fname + .form-alert`).style.display = "none";
+    document.querySelector(
+      `input[name="fname"] + .inner-element`
+    ).style.display = "none";
     document.querySelector(`input[name="fname"]`).style.border =
       "1px solid hsl(var(--grayish-blue))";
   }
@@ -47,15 +51,19 @@ form.addEventListener("submit", (e) => {
   // Validate Last Name
   if (lastname === "") {
     isValid = false;
-    document.querySelector(`input[name="lname"] + .form-alert`).style.display =
-      "block";
+    document.querySelector(`#lname + .form-alert`).style.display = "block";
+    document.querySelector(
+      `input[name="lname"] + .inner-element`
+    ).style.display = "block";
     document.querySelector(`input[name="lname"]`).placeholder = "";
     document.querySelector(`input[name="lname"]`).style.border =
       "2px solid hsl(var(--red))";
     console.log("Last name error");
   } else {
-    document.querySelector(`input[name="lname"] + .form-alert`).style.display =
-      "none";
+    document.querySelector(`#lname + .form-alert`).style.display = "none";
+    document.querySelector(
+      `input[name="lname"] + .inner-element`
+    ).style.display = "none";
     document.querySelector(`input[name="lname"]`).style.border =
       "1px solid hsl(var(--grayish-blue))";
   }
@@ -63,8 +71,10 @@ form.addEventListener("submit", (e) => {
   // Validate Email
   if (!isValidEmail(email)) {
     isValid = false;
-    document.querySelector(`input[name="email"] + .form-alert`).style.display =
-      "block";
+    document.querySelector(`#email + .form-alert`).style.display = "block";
+    document.querySelector(
+      `input[name="email"] + .inner-element`
+    ).style.display = "block";
     document.querySelector(`input[name="email"]`).placeholder =
       "email@example/com";
     document
@@ -74,8 +84,10 @@ form.addEventListener("submit", (e) => {
       "2px solid hsl(var(--red))";
     console.log("Email error");
   } else {
-    document.querySelector(`input[name="email"] + .form-alert`).style.display =
-      "none";
+    document.querySelector(`#email + .form-alert`).style.display = "none";
+    document.querySelector(
+      `input[name="email"] + .inner-element`
+    ).style.display = "none";
     document.querySelector(`input[name="email"]`).style.border =
       "1px solid hsl(var(--grayish-blue))";
   }
@@ -83,15 +95,18 @@ form.addEventListener("submit", (e) => {
   // Validate Password
   if (password === "") {
     isValid = false;
+    document.querySelector(`#password + .form-alert`).style.display = "block";
     document.querySelector(
-      `input[name="password"] + .form-alert`
+      `input[name="password"] + .inner-element`
     ).style.display = "block";
+    document.querySelector(`input[name="password"]`).placeholder = "";
     document.querySelector(`input[name="password"]`).style.border =
       "2px solid hsl(var(--red))";
     console.log("Password error");
   } else {
+    document.querySelector(`#password + .form-alert`).style.display = "none";
     document.querySelector(
-      `input[name="password"] + .form-alert`
+      `input[name="password"] + .inner-element`
     ).style.display = "none";
     document.querySelector(`input[name="password"]`).style.border =
       "1px solid hsl(var(--grayish-blue))";
@@ -99,5 +114,14 @@ form.addEventListener("submit", (e) => {
 
   if (isValid) {
     form.reset(); // Reset form fields
+    // Fix email input color
+    document
+      .querySelector(`input[name="email"]`)
+      .classList.remove("placeholder-red");
+    // Return original placeholder text
+    document.querySelector(`input[name="fname"]`).placeholder = "First Name";
+    document.querySelector(`input[name="lname"]`).placeholder = "Last Name";
+    document.querySelector(`input[name="email"]`).placeholder = "Email Address";
+    document.querySelector(`input[name="password"]`).placeholder = "Password";
   }
 });

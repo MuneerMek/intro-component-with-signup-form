@@ -148,15 +148,15 @@ main {
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 0 hsl(var(--dark-blue), 0.2);
 }
-.signup > input {
-  padding: 1rem;
+.signup input {
+  padding: 1rem 2rem;
   margin: 0.75rem 0 0.25rem;
   width: 100%;
   font-weight: 700;
   border: 1px solid hsl(var(--grayish-blue));
   border-radius: 0.5rem;
 }
-.signup > input[name="submit"] {
+.signup input[name="submit"] {
   background-color: hsl(var(--green));
   color: hsl(var(--white));
   text-transform: uppercase;
@@ -175,6 +175,22 @@ main {
   color: hsl(var(--red));
 }
 
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+.inner-element {
+  display: none;
+  background: hsl(var(--red));
+  aspect-ratio: 1;
+  width: 1.5rem;
+  border-radius: 50%;
+
+  position: absolute;
+  right: 1.5rem;
+  transform: translateY(-50%);
+}
+
 .tos {
   padding-inline: 1rem;
   margin-top: 0.75rem;
@@ -190,7 +206,6 @@ main {
 /* Media Queries */
 @media (min-width: 48rem) {
   body {
-    /* padding: 6rem 10rem; */
     padding: 6rem clamp(5rem, 10vw, 10rem);
     background-image: url("images/bg-intro-desktop.png");
     grid-template-columns: 2fr 3fr;
@@ -212,7 +227,6 @@ main {
     line-height: 1.1;
   }
   .cta {
-    /* align-self: flex-start; */
     width: clamp(20rem, 50vw, 34rem);
   }
   .cta > p {
@@ -224,8 +238,8 @@ main {
   .signup > input {
     padding: 1rem 2rem;
   }
-  .signup > input[name="submit"]:hover,
-  .signup > input[name="submit"]:focus {
+  .signup input[name="submit"]:hover,
+  .signup input[name="submit"]:focus {
     background-color: hsl(var(--green), 0.6);
   }
 }
